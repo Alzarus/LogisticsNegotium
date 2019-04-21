@@ -1,5 +1,6 @@
 package inf008.ads.ifba.edu.br.logisticsnegotium.session;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import inf008.ads.ifba.edu.br.logisticsnegotium.dao.DeliveryDAOIF;
 import inf008.ads.ifba.edu.br.logisticsnegotium.entities.AutomatedVehicles;
@@ -57,7 +58,7 @@ public class AppDelivery implements AppDeliveryIF{
 
 	@Override
 	public Collection<AutomatedVehicles> searchByCapacity(double capacity) throws Exception {
-<<<<<<< HEAD
+
 		Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();
 		Collection<AutomatedVehicles> avAll = this.deliveryDAO.findAll();
 		for(AutomatedVehicles vehicle : avAll){
@@ -67,19 +68,11 @@ public class AppDelivery implements AppDeliveryIF{
 		}
 
     	return avPossible;
-=======
-		/*Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();;
-		Collection<AutomatedVehicles> avAll = this.deliveryDAO.findAll();
-		for(AutomatedVehicles vehicle : avAll)
-    		if(vehicle.getCapacity() == capacity)
-    			avPossible.add(vehicle);
+
 		
-    	return avPossible;*/
->>>>>>> a2e5beba1a562ffb9b0602df1244a3af38b20359
-		
-		Collection<AutomatedVehicles> avPossible = this.deliveryDAO.findByCapacity(capacity);
-		  
-    	return avPossible;
+//		Collection<AutomatedVehicles> avPossible = this.deliveryDAO.findByCapacity(capacity);
+//
+//    	return avPossible;
 	}
 
 
