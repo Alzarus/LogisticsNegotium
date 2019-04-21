@@ -58,12 +58,14 @@ public class AppDelivery implements AppDeliveryIF{
 
 	@Override
 	public Collection<AutomatedVehicles> searchByCapacity(double capacity) throws Exception {
-		Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();;
+		Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();
 		Collection<AutomatedVehicles> avAll = this.deliveryDAO.findAll();
-		for(AutomatedVehicles vehicle : avAll)
-    		if(vehicle.getCapacity() == capacity)
-    			avPossible.add(vehicle);
-		
+		for(AutomatedVehicles vehicle : avAll){
+			if(vehicle.getCapacity() == capacity){
+				avPossible.add(vehicle);
+			}
+		}
+
     	return avPossible;
 		
 		/*Collection<AutomatedVehicles> avPossible = this.deliveryDAO.findByCapacity(capacity);

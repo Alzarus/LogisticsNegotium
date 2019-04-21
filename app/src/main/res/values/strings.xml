@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">LogisticsNegotium</string>
     <string name="hello_world">Hello World! PÁGINA 17 (até 148)</string>
+    <string name="titulo">Informe seu nome</string>
+    <string name="surpreenda_me">Surpreenda-me</string>
+    <string name="saudacao">Olá</string>
 </resources>
 
