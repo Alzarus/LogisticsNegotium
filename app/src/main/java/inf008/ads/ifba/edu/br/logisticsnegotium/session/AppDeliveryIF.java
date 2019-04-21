@@ -8,7 +8,7 @@ import inf008.ads.ifba.edu.br.logisticsnegotium.entities.Point;
 
 public interface AppDeliveryIF{
 	public void addDelivery(int registration, Point reach, Point dely, double price) throws Exception;
-	public void addVehicle(int registration, double capacity, double latitude, double longitude) throws Exception;
+	public void addVehicle(int registration, double capacity, double latitude, double longitude, boolean isAirVehicle) throws Exception;
     public Collection<AutomatedVehicles> listVehicles() throws Exception;
 	public Collection<AutomatedVehicles> searchByCapacity(double capacity) throws Exception;    
 	

@@ -6,11 +6,13 @@ public abstract class AutomatedVehicles implements AutomatedVehiclesIF {
     private int registration;
     private double capacity;
     private Point point;
+    private boolean isAirVehicle;
 
-    public AutomatedVehicles(int registration, double capacity, double latitude, double longitude){
+    public AutomatedVehicles(int registration, double capacity, double latitude, double longitude, boolean isAirVehicle){
         this.setRegistration(registration);
         this.setCapacity(capacity);
         this.setPoint(latitude, longitude);
+        this.setAirVehicle(isAirVehicle);
     }
 
     public int getRegistration() {
@@ -37,5 +39,11 @@ public abstract class AutomatedVehicles implements AutomatedVehiclesIF {
         this.point = new Point(latitude, longitude);
     }
 
+	public boolean isAirVehicle() {
+		return isAirVehicle;
+	}
 
+	public void setAirVehicle(boolean isAirVehicle) {
+		this.isAirVehicle = isAirVehicle;
+	}
 }
