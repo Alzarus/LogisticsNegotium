@@ -1,6 +1,5 @@
 package inf008.ads.ifba.edu.br.logisticsnegotium.session;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import inf008.ads.ifba.edu.br.logisticsnegotium.dao.DeliveryDAOIF;
 import inf008.ads.ifba.edu.br.logisticsnegotium.entities.AutomatedVehicles;
@@ -42,7 +41,7 @@ public class AppDelivery implements AppDeliveryIF{
 
 
 	@Override
-	public void addVehicle(int registration, double capacity, double latitude, double longitude) throws Exception {
+	public void addVehicle(int registration, double capacity, double latitude, double longitude, boolean isAirVehicle) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -58,17 +57,17 @@ public class AppDelivery implements AppDeliveryIF{
 
 	@Override
 	public Collection<AutomatedVehicles> searchByCapacity(double capacity) throws Exception {
-		Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();;
+		/*Collection<AutomatedVehicles> avPossible = new ArrayList<AutomatedVehicles>();;
 		Collection<AutomatedVehicles> avAll = this.deliveryDAO.findAll();
 		for(AutomatedVehicles vehicle : avAll)
     		if(vehicle.getCapacity() == capacity)
     			avPossible.add(vehicle);
 		
-    	return avPossible;
-		
-		/*Collection<AutomatedVehicles> avPossible = this.deliveryDAO.findByCapacity(capacity);
-		  
     	return avPossible;*/
+		
+		Collection<AutomatedVehicles> avPossible = this.deliveryDAO.findByCapacity(capacity);
+		  
+    	return avPossible;
 	}
 
 

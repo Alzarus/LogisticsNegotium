@@ -2,8 +2,8 @@ package inf008.ads.ifba.edu.br.logisticsnegotium.entities;
 
 public class LandVehicle extends AutomatedVehicles {
 
-    public LandVehicle(int registration, double capacity, double latitude, double longitude) {
-        super(registration, capacity, latitude, longitude);
+    public LandVehicle(int registration, double capacity, double latitude, double longitude, boolean isAirVehicle) {
+        super(registration, capacity, latitude, longitude, isAirVehicle);
     }
 
     @Override
