@@ -60,14 +60,13 @@ public class AddVehicleActivity extends Activity {
         values.put("longitude", longitude.getText().toString());
         values.put("isAirVehicle", isAirVehicle.getText().toString());
 
-        long result = db.insert("AUTOMATED_VEHICLES", null, values);
+        long result = helper.saveVehicle(values, db);
 
         if(result != 1){
             Toast.makeText(this, getString(R.string.added_successfully), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, getString(R.string.failed_to_add), Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override

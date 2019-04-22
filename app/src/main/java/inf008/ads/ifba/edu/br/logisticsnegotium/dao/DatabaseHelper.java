@@ -1,12 +1,13 @@
 package inf008.ads.ifba.edu.br.logisticsnegotium.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String BANCO_DADOS = "BoaViagem";
+    private static final String BANCO_DADOS = "LogisticsNegotium";
     private static int VERSAO = 1;
 
     public DatabaseHelper(Context context) {
@@ -21,7 +22,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "            latitude DOUBLE,\n" +
                 "            longitude DOUBLE,\n" +
                 "            isAirVehicle BOOLEAN);");
+    }
 
+    public long saveVehicle(ContentValues newVehicle, SQLiteDatabase db){
+        long result = db.insert("AUTOMATED_VEHICLES", null, newVehicle);
+
+        return result;
     }
 
     @Override
