@@ -1,4 +1,4 @@
-package inf008.ads.ifba.edu.br.logisticsnegotium;
+package inf008.ads.ifba.edu.br.logisticsnegotium.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import inf008.ads.ifba.edu.br.logisticsnegotium.R;
 
 public class MainActivity extends Activity {
 

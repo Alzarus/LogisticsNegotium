@@ -1,5 +1,7 @@
 package inf008.ads.ifba.edu.br.logisticsnegotium.dao;
 
+import android.view.View;
+
 import java.util.Collection;
 
 import inf008.ads.ifba.edu.br.logisticsnegotium.entities.AutomatedVehicles;

@@ -3,24 +3,24 @@ package inf008.ads.ifba.edu.br.logisticsnegotium.entities;
 import inf008.ads.ifba.edu.br.logisticsnegotium.interfaces.AutomatedVehiclesIF;
 
 public abstract class AutomatedVehicles implements AutomatedVehiclesIF {
-    private int registration;
+    private int id;
     private double capacity;
     private Point point;
     private boolean isAirVehicle;
 
-    public AutomatedVehicles(int registration, double capacity, double latitude, double longitude, boolean isAirVehicle){
-        this.setRegistration(registration);
+    public AutomatedVehicles(int id, double capacity, double latitude, double longitude, boolean isAirVehicle){
+        this.setId(id);
         this.setCapacity(capacity);
         this.setPoint(latitude, longitude);
         this.setAirVehicle(isAirVehicle);
     }
 
-    public int getRegistration() {
-        return registration;
+    public int getId() {
+        return id;
     }
 
-    private void setRegistration(int registration) {
-        this.registration = registration;
+    private void setId(int id) {
+        this.id = id;
     }
 
     public double getCapacity() {

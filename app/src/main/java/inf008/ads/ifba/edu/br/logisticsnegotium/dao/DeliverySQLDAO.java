@@ -17,8 +17,8 @@ public class DeliverySQLDAO implements DeliveryDAOIF {
 	private static final String DB_URI = "jdbc:hsqldb:hsql://localhost/";
 	private static final String DB_USER = "SA";
 	private static final String DB_PWD = "";
-	private static final String SAVE = "INSERT INTO AUTOMATED_VEHICLES(registration, capacity, latitude, longitude, isAirVehicle) VALUES(?, ?, ?, ?, ?)";
-	private static final String FIND_ALL = "SELECT registration, capacity, latitude, longitude, isAirVehicle FROM AUTOMATED_VEHICLES";		
+	private static final String SAVE = "INSERT INTO AUTOMATED_VEHICLES(_id, capacity, latitude, longitude, isAirVehicle) VALUES(?, ?, ?, ?, ?)";
+	private static final String FIND_ALL = "SELECT _id, capacity, latitude, longitude, isAirVehicle FROM AUTOMATED_VEHICLES";
 	
 	
 	public DeliverySQLDAO() throws SQLException, ClassNotFoundException {
@@ -34,7 +34,7 @@ public class DeliverySQLDAO implements DeliveryDAOIF {
 	@Override
 	public void save(AutomatedVehicles av, Point point) throws Exception {
 		PreparedStatement stmt = this.getConnection().prepareStatement(DeliverySQLDAO.SAVE);
-		stmt.setInt(1, av.getRegistration());
+		stmt.setInt(1, av.getId());
 		stmt.setDouble(2, av.getCapacity());
 		stmt.setDouble(3, point.getLatitude());
 		stmt.setDouble(4, point.getLongitude());
@@ -51,14 +51,14 @@ public class DeliverySQLDAO implements DeliveryDAOIF {
 		
 		while(rSet.next()) {
 			if(rSet.getBoolean("isAirVehicle")) {
-				AutomatedVehicles av = new AirVehicle(rSet.getInt("registration"),
+				AutomatedVehicles av = new AirVehicle(rSet.getInt("_id"),
 													  rSet.getDouble("capacity"),
 											  		  rSet.getDouble("latitude"), 
 													  rSet.getDouble("longitude"),
 													  rSet.getBoolean("isAirVehicle"));
 				avAll.add(av);
 			}else {
-				AutomatedVehicles av = new LandVehicle(rSet.getInt("registration"),
+				AutomatedVehicles av = new LandVehicle(rSet.getInt("_id"),
 													  rSet.getDouble("capacity"),
 											  		  rSet.getDouble("latitude"), 
 													  rSet.getDouble("longitude"),
@@ -82,7 +82,7 @@ public class DeliverySQLDAO implements DeliveryDAOIF {
 		while(rSet.next()) {
 			while(rSet.next()) {
 				if(rSet.getBoolean("isAirVehicle")) {
-					AutomatedVehicles av = new AirVehicle(rSet.getInt("registration"),
+					AutomatedVehicles av = new AirVehicle(rSet.getInt("_id"),
 														  rSet.getDouble("capacity"),
 												  		  rSet.getDouble("latitude"), 
 														  rSet.getDouble("longitude"),
@@ -90,7 +90,7 @@ public class DeliverySQLDAO implements DeliveryDAOIF {
 					if(av.getCapacity() >= capacity)
 						avByCap.add(av);
 				}else {
-					AutomatedVehicles av = new LandVehicle(rSet.getInt("registration"),
+					AutomatedVehicles av = new LandVehicle(rSet.getInt("_id"),
 														  rSet.getDouble("capacity"),
 												  		  rSet.getDouble("latitude"), 
 														  rSet.getDouble("longitude"),
