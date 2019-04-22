@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_ebook);
         this.nomeEditText = (EditText) findViewById(R.id.nomeEditText);
         this.saudacaoTextView = (TextView) findViewById(R.id.saudacaoTextView);
         this.saudacao = getResources().getString(R.string.saudacao);
