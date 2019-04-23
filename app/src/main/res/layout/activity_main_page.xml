@@ -4,6 +4,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--https://developer.android.com/training/basics/firstapp/starting-activity-->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,15 +23,19 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
+        android:id="@+id/calculateBestVehicleButton"
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:onClick="clicar"
+        android:layout_gravity="center"
+        android:onClick="callNewVehicleActivity"
         android:text="@string/title_button_calculate_best_vehicle" />
 
     <Button
+        android:id="@+id/addVehicleButton"
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:onClick="clicar"
+        android:layout_gravity="center"
+        android:onClick="callNewVehicleActivity"
         android:text="@string/title_button_add_vehicle" />
 
 

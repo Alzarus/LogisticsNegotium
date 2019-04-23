@@ -3,7 +3,7 @@
     <string name="hello_world">Hello World! PÁGINA 133 (até 148)</string>
     <string name="titulo">Informe seu nome</string>
     <string name="title_main">Bem-vindo(a) ao LogisticsNegotium!</string>
-    <string name="title_choose_your_option">\n\nEscolha a sua opção:</string>
+    <string name="title_choose_your_option">\nEscolha a sua opção:\n</string>
     <string name="title_button_calculate_best_vehicle">Calcular o melhor veículo</string>
     <string name="title_button_add_vehicle">Adicionar um novo veículo</string>
     <string name="title_add_vehicle">Informe os dados para o cadastro do veículo:\n\n</string>

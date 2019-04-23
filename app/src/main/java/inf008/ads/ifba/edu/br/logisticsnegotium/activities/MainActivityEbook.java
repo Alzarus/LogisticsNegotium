@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import inf008.ads.ifba.edu.br.logisticsnegotium.R;
 
-public class MainActivity extends Activity {
+public class MainActivityEbook extends Activity {
 
     private EditText nomeEditText;
     private TextView saudacaoTextView;

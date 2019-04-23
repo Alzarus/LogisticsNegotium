@@ -2,6 +2,7 @@ package inf008.ads.ifba.edu.br.logisticsnegotium.activities;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -28,11 +29,15 @@ public class AddVehicleActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vehicle);
+        Intent intent = getIntent();
+
         this.id = (EditText) findViewById(R.id.id);
         this.capacity = (EditText) findViewById(R.id.capacity);
         this.latitude = (EditText) findViewById(R.id.latitude);
         this.longitude = (EditText) findViewById(R.id.longitude);
         this.isAirVehicle = (EditText) findViewById(R.id.isAirVehicle);
+
+
 
         helper = new DatabaseHelper(this);
 
